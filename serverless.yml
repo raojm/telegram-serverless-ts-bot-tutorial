@@ -1,3 +1,5 @@
+org: raojm
+app: bot
 service: telegram-serverless-ts-bot-tutorial
 
 frameworkVersion: "3"

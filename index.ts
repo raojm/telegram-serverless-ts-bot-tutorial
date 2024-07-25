@@ -10,7 +10,7 @@ const params = {
 };
 
 // replace the value below with the Telegram token you receive from @BotFather
-const token = "     ";
+const token = "7471599782:AAEYH3GaO0-Bb1ovjHuInyS0-t10RscHF_U";
 
 const bot = new TelegramBot(token);
 
