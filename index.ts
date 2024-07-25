@@ -16,9 +16,7 @@ const bot = new TelegramBot(token);
 
 let globalResolve: (value: any) => void = () => {};
 
-export const webhook = async (
-  event: APIGatewayProxyEvent
-): Promise<APIGatewayProxyResult> => {
+export const webhook = async ( event: APIGatewayProxyEvent ): Promise<APIGatewayProxyResult> => {
   const bodyParsed = JSON.parse(event.body!);
   console.log("bodyParsed", bodyParsed);
   await new Promise((resolve, reject) => {
@@ -141,3 +139,14 @@ bot.onText(
     globalResolve("ok");
   }
 );
+
+// bot.addListener("game", (message: TelegramBot.Message, metadata: TelegramBot.Metadata) => {
+  
+// })
+
+bot.addListener("callback_query", (query)=>{
+  console.log("callback:", query)
+  bot.answerCallbackQuery(query.id, {"url":"https://s3raojm.s3.ap-southeast-1.amazonaws.com/cocos/index.html"})
+})
+
+// bot.answerCallbackQuery("cocostest", Option)
